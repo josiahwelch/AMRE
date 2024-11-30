@@ -1,0 +1,51 @@
+To initialize an Arca Interpreted Bytecode (AIB) file, you must format your header as such:
+
+First four bytes are a 4 byte 'Magic Number': 0xDEADBEEF
+
+Next six bytes is the SemVer version number, first two being the major version identifier, then minor, and then the patch number
+
+The final six bytes indicate the initial memory allocation
+
+Here is an example header,
+
+HEXADECIMAL:
+
+0xDEADBEEF000101AE0A4500000000EEEE
+
+
+A standard 'line' of AIB is formatted as such,
+
+The first byte indicates the instruction call
+
+The second byte indicates the first argument's data type
+
+The third byte indicates the length of the first argument
+
+The first byte after the first argument is the second argument's data type
+
+the next byte is the length of the second argument
+
+
+if-jump statements operate as such,
+
+The if statement is formatted as such,
+
+first byte is the IFJ instruction call: 0x07
+
+The second byte indicates the length of the jump label(max 16 characters)
+
+The first byte after the jump label declaration indicates the first argument's data type
+
+The next byte indicates the length of the first argument
+
+The first byte after the first argument is the second argument's data type
+
+the next byte is the length of the second argument
+
+The jump statement is formatted as such,
+
+The first byte is the JMP instruction call: 0x08
+
+The second byte is the length of the jump label(max 16 characters)
+
+The rest is the data of the jump label

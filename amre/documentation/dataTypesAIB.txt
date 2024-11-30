@@ -1,0 +1,14 @@
+The data types for arguments in AIB are as listed,
+
+index : instruction hex : mnemonic : number of bytes : description
+
+0 : 0x00 : UB : 1 : unsigned byte
+1 : 0x01 : SB : 1 : signed byte
+2 : 0x02 : US : 2 : unsigned short integer
+3 : 0x03 : SS : 2 : signed short integer
+4 : 0x04 : UI : 4 : unsigned integer
+5 : 0x05 : SI : 4 : signed integer
+6 : 0x06 : NF : 4 : floating point
+7 : 0x07 : UL : 8 : unsigned long integer
+8 : 0x08 : SL : 8 : signed long integer
+9 : 0x09 : LF : 8 
